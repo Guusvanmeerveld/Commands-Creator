@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command-Creator {{#unlessEq title }}| {{capitalize title}} {{/unlessEq}}</title>
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/homepage.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="/stylesheets/material-switches.css">
+  <link rel='stylesheet' disabled class="night-mode-link" href='/stylesheets/dark-mode.css'>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-xl">
+      <a class="navbar-brand">
+        Command-Creator</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Commands
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {{#with (JSONparse (read "./public/json/commands.json"))}}
+                {{#each this}}
+                  <a class="dropdown-item" href="/{{@key}}">{{capitalize @key}}</a>
+                {{/each}}
+              {{/with}}
+            </div>
+          </li>
+        </ul>
+        <i class="fas fa-sliders-h fa-2x settings-icon"></i>
+        <div class="card settings">
+          <div class="card-header">Settings</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="material-switch pull-right">
+                  <span class="mr-3">Dark mode:</span>
+                  <input id="dark-mode" type="checkbox" />
+                  <label for="dark-mode" class="label-primary"></label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="material-switch pull-right">
+                  <span class="mr-3">Pre 1.13 commands:</span>
+                  <input id="old-commands" type="checkbox" />
+                  <label for="old-commands" class="label-primary"></label>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {{{body}}}
+
+  {{!-- Font awesome --}}
+  <script src="https://kit.fontawesome.com/340f4d917c.js"></script>
+
+  {{!-- Bootstrap --}}
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  {{!-- Own js --}}
+  <script src="/scripts/main.js"></script>
+</body>
+
+</html>

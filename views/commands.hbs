@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/stylesheets/commands.css">
+{{#with (JSONparse (read "./public/json/commands.json"))}}
+    <ul class="nav nav-tabs d-flex justify-content-center">
+        {{#each this}}
+        <li class="nav-item">
+            <a href="/{{@key}}" title="{{desc}}" class="nav-link{{#eq @key ../../title}} active{{/eq}}">{{capitalize @key}}</a>
+        </li>
+        {{/each}}
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {{#each this}}
+                    {{#eq @key ../../title}}
+                        {{#eq this.position true}}
+                        <div class="card mt-3 position">
+                            <div class="card-header">Set the position: <span class="paste-button" title="Paste coordinates from clipboard.">Paste</span></div>
+                            <div class="card-body">
+                                <div class="input-group mb-3 position-group">
+                                    <div class="btn-group input-group-prepend">
+                                        <button type="button" id="0" class="btn btn-primary positioning">^</button>
+                                        <button type="button" id="1" class="btn btn-primary positioning">~</button>
+                                    </div>
+                                    <input type="text" class="form-control posX" placeholder="X" aria-describedby="button-addon2">
+                                    <input type="text" class="form-control posY" placeholder="Y" aria-describedby="button-addon2">
+                                    <input type="text" class="form-control posZ" placeholder="Z" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary clear" type="button" id="button-addon2">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    {{/eq}}
+                {{/each}}
+            </div>
+            <div class="col-lg-6">
+                {{#each this}}
+                    {{#eq @key ../../title}}
+                        {{#eq this.block true}}
+                        <div class="card mt-3">
+                            <div class="card-header">Choose your block:</div>
+                            <div class="card-body">
+                                <div class="input-group mb-3">
+                                    <div class="btn-group input-group-prepend">
+                                        <button type="button" class="btn btn-primary dropdown-toggle blocks-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Unset</button>
+                                        <div class="dropdown-menu blocks-dropdown">
+                                            {{!-- {{#with (JSONparse (read "./public/json/blocks.json"))}}
+                                                {{#each this}}
+                                                    <a class="dropdown-item block">{{capitalizeAll (replace @key "_" " ")}}</a>
+                                                {{/each}}
+                                            {{/with}} --}}
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control search-blocks" placeholder="Search" aria-describedby="button-addon2">
+                                </div>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    {{/eq}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+{{/with}}
+
+<div class="container-fluid fixed-bottom">
+    <div class="row">
+        <div class="card w-100">
+            <div class="card-header">Command output:
+                <i class="fas fa-copy copy fa-2x"></i>
+            </div>
+            <div class="card-body">
+                <textarea id="command" name="" class="command-output form-control" disabled cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+{{!-- Own js --}}
+<script src="/scripts/functions.js"></script>
+<script src="/scripts/commands.js"></script>

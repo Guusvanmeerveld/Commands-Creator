@@ -1,0 +1,15 @@
+.copy {
+    float: right;
+    cursor: pointer;
+}
+
+.command-output {
+    resize: none;
+    max-height: 10rem;
+}
+
+.paste-button {
+    cursor: pointer;
+    float: right;
+    color: gray;
+}

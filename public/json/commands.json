@@ -1,0 +1,51 @@
+{
+    "data": {
+        "desc": "Change or read the data of any given object.",
+        "structure": "method type selector path"
+    },
+    "effect": {
+        "desc": "Give an effect to any given entity."
+    },
+    "execute": {
+        "desc": "Specifies the conditions and positioning of a command."
+    },
+    "fill": {
+        "desc": "Fill up a specified area with any given block.",
+        "structure": "posX posY posZ posX posY posZ block state method",
+        "position": true,
+        "block": true
+    },
+    "give": {
+        "desc": "Give an item with given properties to any player."
+    },
+    "kill": {
+        "desc": "Kill any entity."
+    },
+    "loot": {
+        "desc": "Get the loot of any given object and insert it into another object."
+    },
+    "particle": {
+        "desc": "Create a given amount of a type of particle in a given area.",
+        "position": true
+    },
+    "playsound": {
+        "desc": "Play a sound to any player with given properties.",
+        "position": true
+    },
+    "setblock": {
+        "desc": "Set a specified block space to any given block.",
+        "structure": "posX posY posZ block state method",
+        "position": true,
+        "block": true
+    },
+    "summon": {
+        "desc": "Summon an entity with a given position and properties.",
+        "position": true
+    },
+    "team": {
+        "desc": "Manage teams."
+    },
+    "tellraw": {
+        "desc": "Show a given string to an entity."
+    }
+}

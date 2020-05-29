@@ -1,0 +1,49 @@
+.settings-icon {
+    color: #dcdcdc;
+}
+.settings-icon:hover {
+    color: #fff;
+}
+body {
+    background-color: #282a2d;
+}
+a {
+    color: #fff!important;   
+}
+.nav-tabs, .active.nav-link, .nav-link:hover {
+    border-color: #383f47!important;
+}
+.active.nav-link {
+    border-bottom: #282a2d 1px solid!important;
+    background-color: transparent!important;
+}
+.card-header, .input-group-text {
+    color: #fff;
+    background-color: #1e2226;
+    border-color: #383f47;
+}
+.card, .navbar, .list-group-item, .form-control, .bg-light, .dropdown-item, .dropdown-menu {
+    background-color: #22262a!important;
+    color: #fff!important;
+    border-color: #383f47;
+}
+.search {
+    background-color: rgba(48, 48, 48, 0.8)!important;
+}
+.btn-primary {
+    background-color: #0167d4;
+}
+.btn-primary:hover {
+    background-color: #0056b2;
+}
+.active.btn-primary {
+    background-color: #0052aa!important;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    background: #22262a!important;
+    width: 4px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #383f47!important;
+}

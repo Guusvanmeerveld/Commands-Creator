@@ -1,0 +1,61 @@
+/* @font-face {
+    font-family: 'google-sans';
+    src: url('/fonts/productsans-light-webfont.woff2') format('woff2'),
+         url('/fonts/productsans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'google-sans';
+} */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.dropdown-menu {
+    max-height: 15.2rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.dropdown-menu::-webkit-scrollbar {
+    background: #FFFFFF;
+    width: 4px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #F7F7F7;
+}
+
+.navbar {
+    z-index: 1;
+}
+.collapse {
+    position: relative;
+}
+
+.settings-icon {
+    color: #495057;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.settings-icon:hover {
+    color: #586068;
+}
+.settings {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
