@@ -4,16 +4,17 @@ Commands-Creator is a website that allows you create really long and complicated
 
 ## Built With
 
-* [Bootstrap](https://getbootstrap.com) - The CSS framework used
+* [Bootstrap](https://getbootstrap.com) - CSS framework used
 * [NodeJS](https://nodejs.org/) - Managing the backend
-* [Herokuapp](https://herokuapp.com/) - Hosting 
+* [Axios](https://github.com/axios/axios) - JS library used.
 
 ## Authors
 
 * **Guus van Meerveld** - *Initial work* - [Guus van Meerveld](https://github.com/Guusvanmeerveld)
+* **Martijn Oosterhuis** - *Details* - [Martijn Oosterhuis](https://github.com/devostex)
 
 See also the list of [contributors](https://github.com/Guusvanmeerveld/Commands-Creator/graphs/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details
